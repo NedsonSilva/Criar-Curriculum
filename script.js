@@ -94,4 +94,14 @@ const buttonRemove = document.querySelector('#info-remove strong');
 
 buttonRemove.addEventListener('click', infoRemove);
 
+//remover section experiencias 
+const info_expe = document.getElementById('info-prof');
+
+const remove_expe = document.querySelector('#info-prof h2 span')
+
+remove_expe.addEventListener('click', () => {
+  info_expe.remove()
+})
+
+
 

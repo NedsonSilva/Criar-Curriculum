@@ -48,3 +48,8 @@ footer {
   display: none;
 }
 
+.error {
+  display: none;
+}
+
+#info-prof h2 span { display: none; }
