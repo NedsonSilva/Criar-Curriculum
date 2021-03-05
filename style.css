@@ -18,6 +18,11 @@ main {
   margin-bottom: 50px;
 }
 
+section h2 {
+  background: #f3f3f3 !important;
+  -webkit-print-color-adjust: exact;
+}
+
 input, textarea {
   border: 2px solid rgb(235, 235, 235);
   border-radius: 2px;
