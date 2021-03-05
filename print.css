@@ -44,6 +44,11 @@ footer {
   display: block;
 }
 
+footer#assinar {
+  position: absolute;
+  bottom: -140px;
+}
+
 #info-remove {
   display: none;
 }
