@@ -1,6 +1,7 @@
 @page {
   margin: 0;
   border: none;
+  padding: 10px;
   -webkit-print-color-adjust: exact;
 }
 
@@ -52,7 +53,7 @@ footer {
 
 footer#assinar {
   position: absolute;
-  bottom: -140px;
+  bottom: -100px ;
 }
 
 #info-remove {
