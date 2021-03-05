@@ -1,0 +1,50 @@
+@page {
+  margin: 0;
+  border: none;
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+#foto {
+  border: none;
+}
+
+input, select, textarea {
+  border: none;
+  outline: none;
+  background: #fff;
+  caret-color: transparent;
+  font-size: 16px;
+}
+
+input::placeholder, textarea::placeholder {
+  font-size: 0px;
+}
+
+textarea {
+  resize: none;
+}
+
+#imprimir {
+  display: none;
+  appearance: unset;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset;
+}
+
+img {
+  max-width: 100%;
+}
+
+footer {
+  display: block;
+}
+
+#info-remove {
+  display: none;
+}
+
