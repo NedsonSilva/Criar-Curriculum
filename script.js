@@ -81,7 +81,7 @@ document.getElementById('foto-user')
 //Remover info. quando não precisar ser assinado
 
 function infoRemove() {
-  const elementSpan = document.querySelector('span.remove');
+  const elementSpan = document.getElementById('remove');
   const removeToSign = document.getElementById('assinar');
 
   if(elementSpan || removeToSign) {
