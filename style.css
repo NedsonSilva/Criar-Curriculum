@@ -214,6 +214,7 @@ input#idade {
 
 #info-remove {
   margin-top: 30px;
+  color: rgb(47, 47, 214);
 }
 
 #info-remove strong {
@@ -296,5 +297,6 @@ footer#assinar {
   #info-prof h2 span {
     position: relative;
     display: block;
+    right: 0;
   }
 }
