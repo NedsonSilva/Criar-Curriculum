@@ -18,11 +18,6 @@ main {
   margin-bottom: 50px;
 }
 
-section h2 {
-  background: #f3f3f3 !important;
-  -webkit-print-color-adjust: exact;
-}
-
 input, textarea {
   border: 2px solid rgb(235, 235, 235);
   border-radius: 2px;
@@ -30,6 +25,15 @@ input, textarea {
   padding: 2px 5px;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100px;
+  padding: 5px;
+  margin-bottom: 10px;
+  appearance: unset;
 }
 
 input:focus, textarea:focus {
@@ -88,14 +92,17 @@ form {
   flex-direction: column;  
 }
 
+/*||||||||||||||||||||| Informações Pessoais */
 #info-pessoais {
   display: flex;
   flex-direction: column;
   line-height: 30px;
 }
+
 #info-pessoais label {
   margin-left: 3px;
 }
+
 #info-pessoais h2 {
   text-align: center;
   background: #f3f3f3;
@@ -105,7 +112,7 @@ form {
 }
 
 input#endereco {
-  width: 50%;
+  width: 85%;
 }
 
 input#est-civil {
@@ -133,11 +140,7 @@ input#idade {
 }
 
 #objetivo textarea {
-  width: 50%;
   height: 50px;
-  padding: 5px;
-  margin-bottom: 10px;
-  appearance: unset;
 }
 
 /* ESCOLARIDADE */
@@ -155,13 +158,7 @@ input#idade {
   margin-bottom: 10px;
 }
 
-#descri-escolar {
-  width: 50%;
-  padding-left: 5px;
-  height: 40px;
-  margin-bottom: 10px;
-}
-/* Experienias profissionais */
+/* ||||||||||||||| Experiencias profissionais */
 #info-pro {
   display: flex;
   flex-direction: column;
@@ -188,10 +185,7 @@ input#idade {
 }
 
 #info-prof textarea {
-  width: 50%;
   height: 60px;
-  max-height: 120px;
-  margin-bottom: 5px;
 }
 
 /* QUALIFICAÇÔES */
@@ -210,10 +204,8 @@ input#idade {
   line-height: 30px;
 }
 
-#info-adicional {
-  width: 50%;
-  max-height: 120px;
-  margin-bottom: 20px;
+#qualificacoes textarea {
+  height: 70px;
 }
 
 #info-remove {
