@@ -5,18 +5,9 @@
   -webkit-print-color-adjust: exact;
 }
 
-section h2 {
-  background: #f3f3f3 !important;
-  -webkit-print-color-adjust: exact;
-}
+header h1 { font-size: 32px; }
 
-header h1 {
-  font-size: 32px;
-}
-
-#foto {
-  border: none;
-}
+#foto { border: none; }
 
 input, select, textarea {
   border: none;
@@ -26,13 +17,18 @@ input, select, textarea {
   font-size: 16px;
 }
 
+section label { line-height: 0; }
+
+section h2 {
+  background: #f3f3f3 !important;
+  -webkit-print-color-adjust: exact;
+}
+
 input::placeholder, textarea::placeholder {
   font-size: 0px;
 }
 
-textarea {
-  resize: none;
-}
+textarea { resize: none; }
 
 #imprimir {
   display: none;
@@ -43,25 +39,14 @@ input:-webkit-autofill {
   box-shadow: 0 0 0 1000px white inset;
 }
 
-img {
-  max-width: 100%;
-}
+img {  max-width: 100%;  }
 
-footer {
-  display: block;
-}
+footer {  display: block; }
 
-footer#assinar {
-  position: absolute;
-  bottom: -100px ;
-}
+footer#assinar {  margin-top: 110px;  }
 
-#info-remove {
-  display: none;
-}
+#info-remove {  display: none;  }
 
-.error {
-  display: none;
-}
+.error {  display: none;  }
 
 #info-prof h2 span { display: none; }

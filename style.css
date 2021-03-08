@@ -46,7 +46,7 @@ header {
 }
 
 header h1 {
-  font-size: min(7vw, 32px);
+  font-size: min(6vw, 32px);
   text-align: center;
   text-transform: capitalize;
   width: 80%;
@@ -291,6 +291,22 @@ footer#assinar {
   main {
     width: 95%;
     transition: 0.5s;
+  }
+
+  header {
+    height: auto;
+    margin-top: 10px;
+    flex-direction: column-reverse;
+  }
+
+  header h1 {
+    margin: 10px 0;
+  }
+
+  #foto { 
+    
+    min-width: 140px;
+    min-height: 130px;
   }
 
   input, textarea {

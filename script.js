@@ -86,7 +86,7 @@ function infoRemove() {
 
   if(elementSpan || removeToSign) {
     elementSpan.remove();
-    removeToSign.remove();
+    removeToSign.remove();  
   }
 } 
 
