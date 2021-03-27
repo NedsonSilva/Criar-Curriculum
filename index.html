@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Currículo Vitae</title>
-
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="print.css" media="print">
-
   <meta name="description" content="Crie seu curriculum grátis, rápido e fácil.">
   <meta name="author" content="Nedson Silva">
+  <title>Currículo Vitae</title>
 </head>
 <body>
   <main>
     <header>
       <h1 id="nameUser" contenteditable>Nome completo</h1>
 
+      <div class="rotate">
+        <img src="rotate right.png" alt="girar" title="GIRAR">
+      </div>
       <label id="foto">
         <span>Inserir foto</span>
         <input type="file" name="s" id="foto-user">
@@ -90,19 +90,24 @@
       </section>
 
       <p id="info-remove">Em caso do currículo não precisar ser assinado. <strong>Click aqui</strong> para remover algumas informações. </p>
-      
-      <footer id="assinar">
-        <h2 id="assinatura">Nome completo</h2>
-      </footer>
 
       <button id="imprimir">Salvar / Imprimir</button>
     </form>
   </main>
 
+  <div class="container-assinar">
+    <footer id="assinar">
+      <h2 id="assinatura">Nome completo</h2>
+    </footer>
+  </div>
+
   <div class="error">
     <h2>Por favor, preencha todos os campos</h2>
   </div>
 
+  <div class="container-info-remove">
+    <p>Algumas informações foram removidas</p>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

@@ -2,10 +2,10 @@ const buttonPrint = document.getElementById('enviar');
 const nameUser = document.getElementById('nameUser');
 const assinatura = document.getElementById('assinatura')
 
-setInterval(() => {
-  assinatura.innerText = nameUser.innerText;
-}, 1000);
-
+nameUser.addEventListener('blur', () =>
+  assinatura.innerText = nameUser.innerText   
+)
+//Validar inputs
 const validateFields = {
 
   validateInputs() {
@@ -27,7 +27,7 @@ const validateFields = {
       }
     });
   },
-
+  //Mensagem de erro se ouver inputs vazios
   messageError() {
     const modalError = document.querySelector('div.error');
 
@@ -40,7 +40,7 @@ const validateFields = {
   
 }
 
-buttonPrint.addEventListener('submit', (event) => {
+buttonPrint.addEventListener('submit', event => {
   try {
     event.preventDefault();
     validateFields.validateInputs();
@@ -52,7 +52,7 @@ buttonPrint.addEventListener('submit', (event) => {
   }
 })
 
-
+//Carregar imagem do user
 const updateImage = {
   updateFoto() {  
     const elementImg = document.getElementById('update')
@@ -60,9 +60,7 @@ const updateImage = {
    
     const reader = new FileReader();
 
-    reader.onloadend = () => {
-      elementImg.src = reader.result;
-    }
+    reader.onloadend = () => elementImg.src = reader.result;
 
     if(inputFile) {
       reader.readAsDataURL(inputFile);
@@ -71,23 +69,26 @@ const updateImage = {
     }
   }
 }
-
+//Fazer upload da imagem a cada nova img
 document.getElementById('foto-user')
-  .addEventListener('change', () => {
-  updateImage.updateFoto()
-  })
+          .addEventListener('change', 
+            () => updateImage.updateFoto())
 
 
 //Remover info. quando não precisar ser assinado
-
 function infoRemove() {
   const elementSpan = document.getElementById('remove');
   const removeToSign = document.getElementById('assinar');
+  const containerInfo = document.querySelector('.container-info-remove');
 
   if(elementSpan || removeToSign) {
     elementSpan.remove();
     removeToSign.remove();  
+    containerInfo.classList.add('info-active')
   }
+
+  setTimeout( () => 
+      containerInfo.classList.remove('info-active'), 2000);
 } 
 
 const buttonRemove = document.querySelector('#info-remove strong');
@@ -96,15 +97,11 @@ buttonRemove.addEventListener('click', infoRemove);
 
 //remover section experiencias 
 const info_expe = document.getElementById('info-prof');
-
 const remove_expe = document.querySelector('#info-prof h2 span')
 
-remove_expe.addEventListener('click', () => {
-  info_expe.remove()
-})
+remove_expe.addEventListener('click', () => info_expe.remove())
 
-
-
+//Alterar o tamanho dos elementos textArea de forma dinâmica
 const tx = document.getElementsByTagName('textarea');
 
 for (let i = 0; i < tx.length; i++) {
@@ -116,3 +113,18 @@ function OnInput() {
   this.style.height = '0';
   this.style.height = (this.scrollHeight) + 'px';
 }
+
+//Rotacionar imagem 
+const rotate = document.querySelector('.rotate');
+
+let setRotate = 90;
+
+rotate.addEventListener('click', () => {
+  const fotoUser = document.getElementById('update');
+  fotoUser.style.transform = `rotate(${setRotate}deg)`;
+  
+  setRotate += 90;
+})
+
+//ativar container ao remover info
+

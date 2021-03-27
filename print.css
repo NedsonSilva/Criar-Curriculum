@@ -7,6 +7,8 @@
 
 header h1 { font-size: 32px; }
 
+.rotate { display: none;}
+
 #foto { border: none; }
 
 input, select, textarea {
@@ -49,7 +51,12 @@ img {  max-width: 100%;  }
 
 footer {  display: block; }
 
-footer#assinar {  margin-top: 110px;  }
+footer#assinar {  
+  position: absolute;
+  bottom: 100px;
+  margin-top: 100px;  
+  margin: auto;
+}
 
 #info-remove {  display: none;  }
 
