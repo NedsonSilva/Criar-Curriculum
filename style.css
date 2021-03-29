@@ -297,19 +297,19 @@ footer#assinar {
 
 /* Container de info removidas */
 .container-info-remove {
-  background: #238ef1;
-  width: 80vw;
   position: fixed;
   top: 40vh;
+  width: 100vw;
   padding: 15px;
   border-radius: 5px;
-  transform: scale(0);
+  text-align: center;
+  background: #238ef1;
+  transform: scaleY(0);
   transition: 1s;
-  text-align: right;
 }
 
 div.info-active {
-  transform: scale(1);
+  transform: scaleY(1);
 }
 
 .container-info-remove p {
