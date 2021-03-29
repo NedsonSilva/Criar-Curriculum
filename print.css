@@ -63,3 +63,5 @@ footer#assinar {
 .error {  display: none;  }
 
 #info-prof h2 span { display: none; }
+
+.container-info-remove { display: none; }
