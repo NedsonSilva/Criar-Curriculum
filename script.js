@@ -1,10 +1,8 @@
 const buttonPrint = document.getElementById('enviar');
 const nameUser = document.getElementById('nameUser');
-const assinatura = document.getElementById('assinatura')
+const assinatura = document.getElementById('assinatura');
 
-nameUser.addEventListener('blur', () =>
-  assinatura.innerText = nameUser.innerText 
-)
+nameUser.addEventListener('blur', () => assinatura.innerText = nameUser.innerText)
 //Validar inputs
 const validateFields = {
 
@@ -33,9 +31,7 @@ const validateFields = {
 
     modalError.classList.add('error-active');
 
-    setTimeout(() => {
-      modalError.classList.remove('error-active');
-    }, 2000)
+    setTimeout(() => modalError.classList.remove('error-active'), 2000)
   }
   
 }
@@ -55,7 +51,7 @@ buttonPrint.addEventListener('submit', event => {
 //upload image user
 const updateImage = {
   updateFoto() {  
-    const elementImg = document.getElementById('update')
+    const elementImg = document.getElementById('update');
     const inputFile = document.getElementById('foto-user').files[0];
    
     const reader = new FileReader();
@@ -65,7 +61,7 @@ const updateImage = {
     if(inputFile) {
       reader.readAsDataURL(inputFile);
     } else {
-      elementImg.src = ""
+      elementImg.src = "";
     }
   }
 }
@@ -84,11 +80,10 @@ function infoRemove() {
   if(elementSpan || removeToSign) {
     elementSpan.remove();
     removeToSign.remove();  
-    containerInfo.classList.add('info-active')
+    containerInfo.classList.add('info-active');
   }
 
-  setTimeout( () => 
-      containerInfo.classList.remove('info-active'), 2000);
+  setTimeout( () => containerInfo.classList.remove('info-active'), 2000);
 } 
 
 const buttonRemove = document.querySelector('#info-remove strong');
@@ -142,9 +137,7 @@ const modalAddEx = document.getElementById('modal');
 const btnAdd = document.querySelector('#modal form');
 const btnRemove = document.getElementById('modalClose');
 
-AddExp.addEventListener('click', () => {
-  modalAddEx.classList.add('modal_active');
-});
+AddExp.addEventListener('click', () => modalAddEx.classList.add('modal_active'));
 
 btnRemove.addEventListener('click', event => {
   event.preventDefault();
@@ -162,19 +155,17 @@ const addExperiencia = {
   updateExpe() {
     const nameEmpresa = document.getElementById('nameEmpresa');
     const nameCargo = document.getElementById('cargo');
-    const cargoDesc = document.getElementById('cargoDesc');
-  
-    empresa.innerText = nameEmpresa.value;
-    cargo.innerText = `Cargo: ${nameCargo.value}`;
-  
-    listaExp.innerHTML = listaExp.innerHTML + `
-                        <li>${nameEmpresa.value} <span id="rmvExp">Remover</span> </li> 
-                        <li>${nameCargo.value}</li>`;
 
+    listaExp.innerHTML = 
+      listaExp.innerHTML + `
+        <li>${nameEmpresa.value} <span id="rmvExp">Remover</span> </li> 
+        <li>Cargo: ${nameCargo.value}</li>`;
+
+    //Reset values
     nameEmpresa.value = '';
     nameCargo.value = '';
   },
-  removeExe(event) {
+  removeExe() {
     const btnRmv = document.querySelectorAll('#rmvExp');
 
     btnRmv.forEach( current => {
@@ -190,12 +181,12 @@ const addExperiencia = {
   }
 }
 
+//Removendo experiencias
 btnAdd.addEventListener('submit', event => {
   event.preventDefault();
+
   addExperiencia.updateExpe();
   modalAddEx.classList.remove('modal_active');
   addExperiencia.removeExe(event);
 })
-
-//Removendo experiencias
 

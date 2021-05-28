@@ -14,14 +14,14 @@
   flex-direction: column;
   justify-content: center;
   padding: 20px;
-  width: 50%;
+  width: min(90vw, 500px);
   height: max-content;
   background: rgb(47, 47, 47);
   border-radius: 5px;
   position: relative;
 }
 
-#new  input {
+#new input {
   margin-bottom: 10px;
   padding: 10px 5px;
   border-radius: 5px;
@@ -46,7 +46,7 @@
 
 #new div.cargo {
   width: 100%;
-  margin-top: 5%;
+  margin-top: 5px;
 }
 
 .cargo input{
@@ -66,8 +66,10 @@
 #modalClose {
   position: absolute;
   font-size: 1.2rem;
+  font-weight: bold;
   text-align: center;
-  color: rgba(255, 255, 255, 0.836);
+  /* color: rgba(255, 255, 255, 0.836); */
+  color: rgba(221, 23, 23, 0.739);
   top: -14px;
   right: -12px;
   width: 40px;
@@ -76,6 +78,9 @@
   background: rgb(218, 218, 218);
   border-radius: 100px;
   cursor: pointer;
+}
+
+#modalClose:hover {
 }
 
 
@@ -100,28 +105,4 @@
 
 #rmvExp:hover {
   text-decoration: underline;
-}
-
-#manutencao {
-  position: fixed;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  background: #000;
-  z-index: 9999;
-}
-
-#manutencao div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 90%;
-  height: 50%;
-  background: rgb(230, 230, 230);
-  font-size: max(4vw, 1.5rem);
 }

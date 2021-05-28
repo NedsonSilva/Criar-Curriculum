@@ -21,7 +21,7 @@ body {
 
 main { width: 85%; }
 
-header h1 { font-size: 24px; }
+header h1 { font-size: 28px; }
 
 .rotate { display: none;}
 
@@ -83,10 +83,12 @@ footer { display: block; }
 
 .container-info-remove { display: none; }
 
-#assinatura { display: block; }
+#assinatura { display: block; font-size: 28px;}
 
 #add_expe { display: none; }
 
 .container-assinar {
   display: flex;
 }
+
+#rmvExp { display: none; }
