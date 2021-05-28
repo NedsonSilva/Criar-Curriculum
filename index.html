@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modal.css">
   <link rel="stylesheet" href="print.css" media="print">
   <meta name="description" content="Crie seu curriculum grátis, rápido e fácil.">
-  <meta name="author" content="Nedson Silva">
+  <meta name="keywords" content="Criar currículo, grátis, rádido, fácil">
+  <meta name="author" content="Nedson Silva Alfaia">
   <title>Currículo Vitae</title>
 </head>
 <body>
@@ -27,28 +29,28 @@
 
     <form id="enviar" action="">
       <section id="info-pessoais">
-        <h2 aria-readonly="readonly">informações pessoais</h2>
+        <h2>informações pessoais</h2>
   
         <label class="end">
           <strong> Endereço: </strong>
-          <input type="text" id="endereco" placeholder="ex: bairro, rua, cep">
+          <input type="text" id="endereco" placeholder="ex: bairro, rua, cep" maxlength="100">
         </label>
         
   
         <label class="end">
           <strong>Estado Civil:</strong>
-          <input type="text" id="est-civil">
+          <input type="text" id="est-civil" placeholder="Solteiro" maxlength="10">
         </label>
   
         <label class="end">
           <strong>Idade: </strong>
-          <input type="text" id="idade">
+          <input type="text" id="idade" placeholder="21 anos" maxlength="8">
         </label>
         
   
         <label class="end">
           <strong>Nacionalidade:</strong>  
-          <input type="text" id="nacionalidade" placeholder="ex: brasileiro">
+          <input type="text" id="nacionalidade" placeholder="ex: brasileiro" maxlength="20">
         </label>
         
   
@@ -59,13 +61,13 @@
   
         <label for="email">
           <strong>E-mail:</strong>
-          <input type="email" id="email" placeholder="exemplo@gmail.com">
+          <input type="email" id="email" placeholder="exemplo@gmail.com" maxlength="50">
         </label>
       </section>
   
       <section id="objetivo">
         <h2>Objetivo</h2>
-        <textarea id="desc-objetivo" cols="30" rows="5" placeholder="descreva seu objetivo"  maxlength="300"></textarea>
+        <textarea id="desc-objetivo" placeholder="descreva seu objetivo"  maxlength="200"></textarea>
       </section>
   
       <section id="escolaridade">
@@ -74,16 +76,20 @@
       </section>
 
       <section id="info-prof">
-        <h2>Esperiências Profissionais <span>Não tenho experiência</span></h2>
+        <h2>Esperiências Profissionais <span>Sem experiência</span></h2>
 
-        <textarea name="experiencias" cols="20" rows="4" placeholder="Ex: nome empresa (2020 - 2021) 
-      Cargo: vendedor" maxlength="300"></textarea>
+        <p id="add_expe"> + Adicionar experiência</p>
+
+        <ul id="add">
+          <!-- <li class="local"></li>
+          <li class="descri" ></li> -->
+        </ul>
       </section>
 
       <section id="qualificacoes">
         <h2>Qualificações e informações adicionais</h2>
   
-        <textarea id="info-adicional" cols="30" rows="4" placeholder="Ex: cursos, habilidades, etc"></textarea>
+        <textarea id="info-adicional" placeholder="Ex: cursos, habilidades, etc" maxlength="200" autocomplete="off"></textarea>
        
         <p>Declaro para todos os fins que as informações deste curriculum vitae são verdadeiras<span id="remove">, por
           isso dato e assino</span>. </p>
@@ -95,12 +101,6 @@
     </form>
   </main>
 
-  <div class="container-assinar">
-    <footer id="assinar">
-      <h2 id="assinatura">Nome completo</h2>
-    </footer>
-  </div>
-
   <div class="error">
     <h2>Por favor, preencha todos os campos</h2>
   </div>
@@ -108,6 +108,42 @@
   <div class="container-info-remove">
     <p>Algumas informações foram removidas</p>
   </div>
+
+  <section id="modal">
+    <form id="new" action="">
+      <span id="modalClose">X</span>
+      <label for="nameEmpresa">Nome da empresa e tempo de trabalho</label>
+      <input 
+        type="text" 
+        id="nameEmpresa" 
+        placeholder="Ex: Nome Empresa (2018 -  2021)"
+        required
+      >
+      
+      <div class="cargo">
+        <label for="cargo">Cargo</label>
+        <input 
+          type="text" 
+          id="cargo" 
+          placeholder="Cargo: ex: Operador de caixa"
+          required
+        >
+      </div>
+      <button>Adicionar</button>
+    </form>
+  </section>
+  <div class="container-assinar">
+    <footer id="assinar">
+      <h2 id="assinatura">Nome completo</h2>
+    </footer>
+  </div>
+
+  <section id="manutencao">
+    <div>
+      <h1>Em manutencao</h1>
+      <p>Volte mais tarde...</p>
+    </div>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>

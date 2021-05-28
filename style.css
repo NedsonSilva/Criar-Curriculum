@@ -6,18 +6,15 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+body { font-family: Arial, Helvetica, sans-serif; }
 
 img { max-width: 100%; }
 
 main {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 60%;
   margin: auto;
-  margin-bottom: 50px;
 }
 
 input, textarea {
@@ -52,10 +49,10 @@ header {
 }
 
 header h1 {
-  font-size: min(6vw, 32px);
+  font-size: min(6vw, 30px);
   text-align: center;
   text-transform: capitalize;
-  width: 80%;
+  width: 65%;
 }
 
 .rotate {
@@ -93,7 +90,7 @@ header h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 form {  
@@ -123,7 +120,7 @@ form {
 }
 
 input#endereco {
-  width: 85%;
+  width: 80%;
 }
 
 input#est-civil {
@@ -131,7 +128,11 @@ input#est-civil {
 }
 
 input#idade {
-  width: 80px;
+  width: 90px;
+}
+
+input#email {
+  width: 400px;
 }
 
 /* |||||| OBJETIVO   \||||||||| */
@@ -199,6 +200,18 @@ input#idade {
   height: 60px;
 }
 
+#add_expe {
+  color: #49AA26;
+  width: max-content;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+#add_expe:hover {
+  color: #3DD705;
+}
+
 /* QUALIFICAÇÔES */
 #qualificacoes {
   display: flex;
@@ -215,10 +228,6 @@ input#idade {
   line-height: 30px;
 }
 
-#qualificacoes textarea {
-  height: 70px;
-}
-
 #info-remove {
   margin-top: 30px;
   color: rgb(47, 47, 214);
@@ -230,37 +239,31 @@ input#idade {
 }
 
 #imprimir {
-  display: block;
   width: 200px;
   padding: 10px 0;
-  margin: 40px auto 60px auto;
+  margin: 40px auto;
   background: cornflowerblue;
   border: none;
   outline: none;
   font-weight: bold;
   color: #FFF;
   border-radius: 5px;
-  transition: 400ms;
   font-size: 16px;
+  transition: 0.3s;
 }
 
 #imprimir:hover {
   box-shadow: 4px 7px 7px #e0e0e0,
               -4px 7px 7px #e0e0e0;
   transform: translateY(-10%);
-  transition: 400ms;
 }
 
 .container-assinar {
-  display: flex;
+  position: fixed;
+  display: none;
   justify-content: center;
-}
-
-footer#assinar {
-  position: relative;
+  width: 100vw;
   bottom: 50px;
-  width: min-content;
-  margin: auto;
 }
 
 #assinatura {
@@ -269,6 +272,7 @@ footer#assinar {
   text-align: center;
   width: max-content;
   text-transform: uppercase;
+  font-size: 24px;
 }
 
 /* Mensagem de erro */
@@ -282,12 +286,11 @@ footer#assinar {
   height: 60px;
   background: rgba(255, 0, 0, 0.904);
   transform: translateY(-100%);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .error-active {
   transform: translateY(0);
-  transition: 0.5s;
 }
 
 .error h2 {
@@ -298,30 +301,28 @@ footer#assinar {
 /* Container de info removidas */
 .container-info-remove {
   position: fixed;
-  top: 40vh;
+  top: 0;
   width: 100vw;
   padding: 15px;
   border-radius: 5px;
   text-align: center;
   background: #238ef1;
-  transform: scaleY(0);
-  transition: 1s;
+  transform: translateY(-50%) scaleY(0);
+  transition: 0.35s;
 }
 
-div.info-active {
-  transform: scaleY(1);
-}
+div.info-active { transform: translateY(0) scaleY(1); }
 
 .container-info-remove p {
   color: white;
   font-weight: 600;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
 
   main {
     width: 95%;
-    transition: 0.5s;
+    transition: 0.3s;
   }
 
   header {
@@ -355,7 +356,5 @@ div.info-active {
     right: 0;
   }
 
-  .container-info-remove {
-    width: 100vw;
-  }
+  .container-info-remove { width: 100vw; }
 }

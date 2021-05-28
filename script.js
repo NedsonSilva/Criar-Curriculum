@@ -3,15 +3,15 @@ const nameUser = document.getElementById('nameUser');
 const assinatura = document.getElementById('assinatura')
 
 nameUser.addEventListener('blur', () =>
-  assinatura.innerText = nameUser.innerText   
+  assinatura.innerText = nameUser.innerText 
 )
 //Validar inputs
 const validateFields = {
 
   validateInputs() {
-    const inputAll = document.querySelectorAll("input:not([type='file'])");
+    const inputAll = document.querySelectorAll("main input:not([type='file'])");
 
-    inputAll.forEach((inputAll) => {
+    inputAll.forEach( inputAll => {
       if(inputAll.value === '') {
         throw new Error('error');
       }
@@ -21,7 +21,7 @@ const validateFields = {
   validadeTextAreas() {
     const textAreaAll = document.querySelectorAll('textarea');
 
-    textAreaAll.forEach((textAreaAll) => {
+    textAreaAll.forEach( textAreaAll => {
       if(textAreaAll.value === '') {
         throw new Error('error');
       }
@@ -52,7 +52,7 @@ buttonPrint.addEventListener('submit', event => {
   }
 })
 
-//Carregar imagem do user
+//upload image user
 const updateImage = {
   updateFoto() {  
     const elementImg = document.getElementById('update')
@@ -109,6 +109,13 @@ for (let i = 0; i < tx.length; i++) {
   tx[i].addEventListener("input", OnInput, false);
 }
 
+function txResize() {
+  for (let i = 0; i < tx.length; i++) {
+    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].addEventListener("input", OnInput, false);
+  }
+}
+
 function OnInput() {
   this.style.height = '0';
   this.style.height = (this.scrollHeight) + 'px';
@@ -127,4 +134,68 @@ rotate.addEventListener('click', () => {
 })
 
 //ativar container ao remover info
+
+
+//Add Experiência
+const AddExp = document.getElementById('add_expe');
+const modalAddEx = document.getElementById('modal');
+const btnAdd = document.querySelector('#modal form');
+const btnRemove = document.getElementById('modalClose');
+
+AddExp.addEventListener('click', () => {
+  modalAddEx.classList.add('modal_active');
+});
+
+btnRemove.addEventListener('click', event => {
+  event.preventDefault();
+  modalAddEx.classList.remove('modal_active');
+})
+
+
+// ADIONAR EXPERIÊNCIA
+const listaExp = document.getElementById('add');
+const empresa = document.createElement('li');
+const cargo = document.createElement('li');
+
+const addExperiencia = {
+
+  updateExpe() {
+    const nameEmpresa = document.getElementById('nameEmpresa');
+    const nameCargo = document.getElementById('cargo');
+    const cargoDesc = document.getElementById('cargoDesc');
+  
+    empresa.innerText = nameEmpresa.value;
+    cargo.innerText = `Cargo: ${nameCargo.value}`;
+  
+    listaExp.innerHTML = listaExp.innerHTML + `
+                        <li>${nameEmpresa.value} <span id="rmvExp">Remover</span> </li> 
+                        <li>${nameCargo.value}</li>`;
+
+    nameEmpresa.value = '';
+    nameCargo.value = '';
+  },
+  removeExe(event) {
+    const btnRmv = document.querySelectorAll('#rmvExp');
+
+    btnRmv.forEach( current => {
+
+      current.addEventListener('click', (event) => {
+        const liElement = event.currentTarget.parentNode;
+        const nextElement = liElement.nextElementSibling;
+        
+        nextElement.remove();
+        liElement.remove();
+      });
+    })
+  }
+}
+
+btnAdd.addEventListener('submit', event => {
+  event.preventDefault();
+  addExperiencia.updateExpe();
+  modalAddEx.classList.remove('modal_active');
+  addExperiencia.removeExe(event);
+})
+
+//Removendo experiencias
 
