@@ -231,6 +231,15 @@ input#email {
   line-height: 26px;
 }
 
+#cidade {
+  margin-left: auto;
+  margin-top: 80px;
+}
+
+#cidade input {
+  width: 200px;
+}
+
 #info-remove {
   margin-top: 30px;
   color: rgb(47, 47, 214);
@@ -361,3 +370,26 @@ div.info-active { transform: translateY(0) scaleY(1); }
 
   .container-info-remove { width: 100vw; }
 }
+
+#no-print {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max(90%, 60%);
+  margin: 3rem auto;
+  margin-bottom: 5rem;
+}
+
+#no-print h2 {
+  font-weight: lighter;
+  font-size: max(2vw, 1.2rem);
+  margin-bottom: 1rem;
+}
+
+#no-print img {
+  width: 40px;
+  display: inline;
+  margin: 0 .5rem;
+}
+
+#no-print a { font-size: 0; }
