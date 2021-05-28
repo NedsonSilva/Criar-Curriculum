@@ -68,21 +68,22 @@
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  /* color: rgba(255, 255, 255, 0.836); */
   color: rgba(221, 23, 23, 0.739);
   top: -14px;
   right: -12px;
   width: 40px;
   height: 40px;
   line-height: 40px;
-  background: rgb(218, 218, 218);
+  background: rgba(218, 218, 218, 0.924);
   border-radius: 100px;
   cursor: pointer;
+  transition: .3s;
+  will-change: contents;
 }
 
 #modalClose:hover {
+  transform: scale(1.09);
 }
-
 
 #add {
   margin-left: 2.5rem;
@@ -97,12 +98,14 @@
 
 /* Remover experiencia */
 #rmvExp {
-  color: red;
-  font-weight: normal;
-  margin-left: 1rem;
+  font-weight: bolder;
+  margin-left: 2rem;
   cursor: pointer;
+  border-radius: 100%;
+  vertical-align: middle;
 }
 
 #rmvExp:hover {
   text-decoration: underline;
 }
+

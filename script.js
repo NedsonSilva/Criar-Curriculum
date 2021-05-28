@@ -158,7 +158,7 @@ const addExperiencia = {
 
     listaExp.innerHTML = 
       listaExp.innerHTML + `
-        <li>${nameEmpresa.value} <span id="rmvExp">Remover</span> </li> 
+        <li>${nameEmpresa.value} <span id="rmvExp"> <img src="icons/minus.svg" title="Remover"> </span> </li> 
         <li>Cargo: ${nameCargo.value}</li>`;
 
     //Reset values
