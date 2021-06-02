@@ -36,7 +36,8 @@ header h1 { font-size: 28px; }
   padding-bottom: 15px !important;
 }
 
-input {
+main input {
+  margin: auto;
   border: none;
   outline: none;
   background: #fff;
@@ -81,6 +82,8 @@ footer { display: block; }
 .error { display: none; }
 
 #info-prof h2 span { display: none; }
+
+#qualificacoes p { display: block; }
 
 .container-info-remove { display: none; }
 

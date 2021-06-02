@@ -1,5 +1,4 @@
 /* |||||||   GERAL ||||||| */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,9 +16,11 @@ main {
   margin: auto;
 }
 
+main input { margin: 2px 0; }
+
 input, textarea {
-  border: 2px solid rgb(235, 235, 235);
-  border-radius: 2px;
+  border: 2px solid rgb(211, 211, 211);
+  border-radius: 4px;
   outline: none; /*remove bordar do elemento em foco */
   padding: 2px 5px;
   font-size: 16px;
@@ -83,9 +84,7 @@ header h1 {
   border: 2px dashed #cfcfcf;
 }
 
-#foto input {
-  display: none;
-}
+#foto input { display: none; }
 
 #foto img {
   position: absolute;
@@ -110,9 +109,7 @@ form {
   line-height: 25px;
 }
 
-#info-pessoais label {
-  margin-left: 3px;
-}
+#info-pessoais label { margin-left: 3px; }
 
 #info-pessoais h2 {
   text-align: center;
@@ -122,21 +119,13 @@ form {
   margin-bottom: 8px;
 }
 
-input#endereco {
-  width: 80%;
-}
+input#endereco { width: 80%; }
 
-input#est-civil {
-  width: 90px;
-}
+input#est-civil { width: 90px; }
 
-input#idade {
-  width: 90px;
-}
+input#idade { width: 90px; }
 
-input#email {
-  width: 400px;
-}
+input#email { width: 400px; }
 
 /* |||||| OBJETIVO   \||||||||| */
 #objetivo {
@@ -233,6 +222,10 @@ input#email {
   line-height: 26px;
 }
 
+#qualificacoes p {
+  display: none;
+}
+
 #cidade {
   margin-left: auto;
   margin-top: 80px;
@@ -243,33 +236,58 @@ input#email {
 }
 
 #info-remove {
-  margin-top: 30px;
-  color: rgb(47, 47, 214);
+  margin-top: 20px;
+  height: min;
+}
+#info-remove h3 {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-#info-remove strong {
-  text-decoration: underline;
+#info-remove label {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin-top: 7px;
+  margin-left: 10px;
+  height: min-content;
   cursor: pointer;
 }
 
+#info-remove input{
+  appearance: none;
+  width: 1.2rem !important;
+  height: 1.2rem;
+  margin-right: 5px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+#info-remove input:checked {
+  background: #0075FF;
+  border: none;
+  /* appearance: auto; */
+}
+
+/* #info-remove label */
+
 #imprimir {
   width: 200px;
-  padding: 10px 0;
+  padding: 14px 0;
   margin: 40px auto;
-  background: #49AA26;
+  background: #53ad32;
   border: none;
   outline: none;
   font-weight: bold;
   color: #FFF;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 #imprimir:hover {
-  box-shadow: 4px 7px 7px #e0e0e0,
-              -4px 7px 7px #e0e0e0;
-  transform: translateY(-10%);
+  background:#36a10f;
 }
 
 .container-assinar {
@@ -298,38 +316,17 @@ input#email {
   top: 0;
   width: 100vw;
   height: 60px;
-  background: rgba(255, 0, 0, 0.904);
+  background: rgb(231, 21, 21);
   transform: translateY(-100%);
   transition: 0.3s;
+  z-index: 10;
 }
 
-.error-active {
-  transform: translateY(0);
-}
+.error-active { transform: translateY(0); }
 
 .error h2 {
   font-size: min(5vw, 20px);
   color: #FFF;
-}
-
-/* Container de info removidas */
-.container-info-remove {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: center;
-  background: #238ef1;
-  transform: translateY(-50%) scaleY(0);
-  transition: 0.35s;
-}
-
-div.info-active { transform: translateY(0) scaleY(1); }
-
-.container-info-remove p {
-  color: white;
-  font-weight: 600;
 }
 
 @media screen and (max-width: 800px) {
@@ -360,6 +357,12 @@ div.info-active { transform: translateY(0) scaleY(1); }
     min-height: 130px;
   }
 
+  main input {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
   input, textarea {
     width: 100% !important;
   }
@@ -369,8 +372,6 @@ div.info-active { transform: translateY(0) scaleY(1); }
     display: block;
     right: 0;
   }
-
-  .container-info-remove { width: 100vw; }
 }
 
 #no-print {

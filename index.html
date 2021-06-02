@@ -91,22 +91,32 @@
   
         <textarea id="info-adicional" placeholder="Ex: cursos, habilidades, etc" maxlength="200" autocomplete="off"></textarea>
        
-        <p>Declaro para todos os fins que as informações deste curriculum vitae são verdadeiras<span id="remove">, por
+        <p>Declaro para todos os fins que as informações deste currículum vitae são verdadeiras<span id="remove">, por
           isso dato e assino</span>. </p>
       </section>
 
-      <p id="info-remove">Em caso do currículo não precisar ser assinado. <strong>Click aqui</strong> para remover algumas informações. </p>
+      <!-- <p id="info-remove">Em caso do currículo não precisar ser assinado. <strong>Click aqui</strong> para remover algumas informações. </p> -->
+
+      <section id="info-remove">
+        <h3>O currículo vai ser assinado?</h3>
+
+        <label for="sim">
+          <input type="radio" name="radio" id="sim" required>
+          Sim
+        </label>
+
+        <label for="nao">
+          <input type="radio" name="radio" id="nao" required>
+          Não
+        </label>
+      </section>
 
       <button id="imprimir">Salvar / Imprimir</button>
     </form>
   </main>
 
   <div class="error">
-    <h2>Por favor, preencha todos os campos</h2>
-  </div>
-
-  <div class="container-info-remove">
-    <p>Algumas informações foram removidas</p>
+    <h2>Preencha todos os campos</h2>
   </div>
 
   <section id="modal">
@@ -125,21 +135,23 @@
         <input 
           type="text" 
           id="cargo" 
-          placeholder="Cargo: ex: Operador de caixa"
+          placeholder="Ex: Operador de caixa"
           required
         >
       </div>
+
       <button>Adicionar</button>
     </form>
   </section>
+
   <div class="container-assinar">
     <footer id="assinar">
       <h2 id="assinatura">Nome completo</h2>
     </footer>
   </div>
 
-  <section id="no-print">
-    <h2>Entrar em contato com o desenvolvedor</h2>
+  <footer id="no-print">
+    <h2>Entre em contato com o desenvolvedor</h2>
     <div>
       <a href="https://www.linkedin.com/in/nedson-silva-80b397154/" target="_blank" title="Linkedin">
         <img src="icons/linkedin.png" alt="Linkedin">
@@ -151,7 +163,7 @@
         <img src="icons/facebook.png" alt="Facebook">
       </a>
     </div>
-  </section>
+  </footer>
 
   <script src="script.js"></script>
 </body>
